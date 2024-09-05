@@ -1,0 +1,211 @@
+/// Describe 公用样式
+/// Date 2024/07/11
+/// Author END
+
+@import './global.scss';
+
+:root {
+  --ti-color-white: #FFFFFF;
+  --ti-color-black: #181818;
+  --ti-color-primary: #4C7BFF;
+  --ti-color-gray: #DDDDDD;
+  --ti-color-gray-light: #E7E7E7;
+  --ti-color-red: #FF4700;
+  --ti-color-green: #1DAE7A;
+  --ti-color-blue: #4C7BFF;
+  --ti-color-orange: #EB5E00;
+
+  --ti-mask: rgba(0, 0, 0, .45);
+  --ti-shadow: rgba(0, 0, 0, .05);
+
+  --ti-divider: #F0F2F5;
+  --ti-text-light: #999999;
+  --ti-text-dark: #000000;
+  
+  --ti-text-color-3: #333333;
+  --ti-text-color-6: #666666;
+  --ti-text-color-9: #999999;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--ti-color-white);
+  --color-background-mask: var(--ti-mask);
+  
+  --color-border: var(--ti-color-gray);
+  --color-border-light: var(--ti-color-gray-light);
+  
+  --color-text: var(--ti-text-color-3);
+  --color-text-6: var(--ti-text-color-6);
+  --color-text-9: var(--ti-text-color-9);
+  --color-blue: var(--ti-color-blue);
+}
+
+/* 尺寸变量 */
+:root {
+  --ti-font-lighter: 400;
+  --ti-font-bold: 600;
+
+  --ti-font-size-xs: 24px;
+  --ti-font-size-sm: 28px;
+  --ti-font-size-md: 32px;
+  --ti-font-size-lg: 36px;
+  
+  --ti-line-height-xs: 36px;
+  --ti-line-height-sm: 42px;
+  --ti-line-height-md: 48px;
+  --ti-line-height-lg: 54px;
+
+  --ti-radius-xs: 8px;
+  --ti-radius-sm: 12px;
+  --ti-radius-md: 16px;
+  --ti-radius-lg: 20px;
+}
+
+page, block, view, scroll-view, swiper, movable-view, icon, text, progress,
+button, checkbox, form, input, label, picker, picker-view, radio, slider, switch,
+textarea, navigator, audio, image, video, map, canvas, contact-button, cover-image, cover-view{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+}
+
+button::after {
+  display: none;
+}
+
+.dir-left-nowrap {
+  /* 主轴 排列方式从左侧开始 不换行*/
+  @include flexs;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.dir-left-wrap {
+  /* 主轴 排列方式从左侧开始 换行*/
+  @include flexs;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dir-top-nowrap {
+  /* 主轴 排列方式从顶部开始 不换行*/
+  @include flexs;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.main-right {
+  /* 主轴 右对齐 */
+  @include flexs;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+.main-between {
+  /* 主轴 两端对齐 */
+  @include flexs;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.main-center {
+  /* 主轴 居中对齐 */
+  @include flexs;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.main-around {
+  /* 主轴 项目位于各行之前、之间、之后都留有空白的容器内*/
+  @include flexs;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+.main-cross-center {
+  @include flexs;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.cross-bottom {
+  /* 交叉轴 终点对齐 */
+  @include flexs;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  -ms-grid-row-align: flex-end;
+  align-items: flex-end;
+}
+
+.cross-baseline {
+  /* 交叉轴 第一行文字基线对齐 */
+  @include flexs;
+  -webkit-align-items: baseline;
+  align-items: baseline;
+}
+
+.cross-center {
+  /* 交叉轴 居中对齐 */
+  @include flexs;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.cross-stretch {
+  /* 交叉轴 高度并排铺满 高度不固定*/
+  @include flexs;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+}
+
+.flex-wrap {
+  /* 流模式 第一行在上方 */
+  @include flexs;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.box-grow-0 {
+  /* flex 子元素固定宽度*/
+  @include flex(0);
+}
+
+.box-grow-1 {
+  /* flex 子元素等分 */
+  @include flex(1);
+}
+.box-grow-2 {
+  /* flex 子元素等分 */
+  @include flex(2);
+}
+
+/* 在线链接服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+@font-face {
+  font-family: 'iconfont';  /* Project id 4380602 */
+  src: url('//at.alicdn.com/t/c/font_4380602_ntwnu7hmj7j.woff2?t=1720158813364') format('woff2'),
+       url('//at.alicdn.com/t/c/font_4380602_ntwnu7hmj7j.woff?t=1720158813364') format('woff'),
+       url('//at.alicdn.com/t/c/font_4380602_ntwnu7hmj7j.ttf?t=1720158813364') format('truetype');
+}
+.icon {
+  font-family: "iconfont";
+  font-size: 28rpx;
+  line-height: 1;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

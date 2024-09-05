@@ -1,0 +1,52 @@
+/// Describe 公用样式
+/// Date 2024/07/11
+/// Author END
+
+:root {
+  --ti-color-primary: #4C7BFF;
+  --ti-color-white: #FFFFFF;
+  --ti-color-black: #000000;
+  --ti-color-gray: #DDDDDD;
+  --ti-color-gray-light: #E7E7E7;
+
+  --ti-mask: rgba(0, 0, 0, .45);
+  --ti-shadow: rgba(0, 0, 0, .05);
+
+  --ti-divider: #F0F2F5;
+  --ti-text-light: #999999;
+  --ti-text-dark: #000000;
+  
+  --ti-text-color-3: #333333;
+  --ti-text-color-6: #666666;
+  --ti-text-color-9: #999999;
+}
+
+/* semantic color variables for this project */
+:root {
+  --color-priamry: var(--ti-color-primary);
+  --color-background: var(--ti-color-white);
+  --color-background-mask: var(--ti-mask);
+  
+  --color-border: var(--ti-color-gray);
+  --color-border-light: var(--ti-color-gray-light);
+  
+  --color-text: var(--ti-text-color-3);
+  --color-text-6: var(--ti-text-color-6);
+  --color-text-9: var(--ti-text-color-9);
+}
+
+/* 尺寸变量 */
+:root {
+  --ti-font-lighter: 400;
+  --ti-font-bold: 600;
+
+  --ti-font-size-xs: 24px;
+  --ti-font-size-sm: 28px;
+  --ti-font-size-md: 32px;
+  --ti-font-size-lg: 36px;
+  
+  --ti-radius-xs: 8px;
+  --ti-radius-sm: 12px;
+  --ti-radius-md: 16px;
+  --ti-radius-lg: 20px;
+}

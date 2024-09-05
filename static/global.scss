@@ -1,0 +1,118 @@
+/* 渐变色 */
+@mixin grad($deg: 0, $color1: #EF1968, $color2: #E4127F) {
+  background: -webkit-linear-gradient($deg, $color1, $color2);
+  background: linear-gradient($deg, $color1, $color2);
+}
+@mixin grad1($deg: 0, $color1: #000, $color2: #fff, $color3: #fff) {
+  background: -webkit-linear-gradient($deg, $color1, $color2, $color3);
+  background: linear-gradient($deg, $color1, $color2, $color3);
+}
+/* 动画 */
+@mixin transition($property: all, $s: 0.4s, $effect: ease, $delay: 0s) {
+  -webkit-transition: $property $s $effect $delay;
+  transition: $property $s $effect $delay;
+}
+
+/* 旋转 */
+@mixin rotate( $deg: 45deg ) {
+  -webkit-transform: rotate( $deg );
+  transform: rotate( $deg );
+}
+
+/* 位移 */
+@mixin translate( $x: 0, $y: 0) {
+  -webkit-transform: translate( $x, $y );
+          transform: translate( $x, $y );
+}
+
+/* 缩放 */
+@mixin scale( $x: 1, $y: 1) {
+  -webkit-transform: scale( $x, $y );
+          transform: scale( $x, $y );
+}
+
+@mixin translateScale( $x: 0, $y: 0, $s: 1) {
+  -webkit-transform: translate( $x, $y ) scale( $s );
+          transform: translate( $x, $y ) scale( $s );
+}
+
+@mixin rotateScale( $x: 1, $y: 1, $deg: 45deg) {
+  -webkit-transform: rotate( $deg ) scale( $x, $y );
+          transform: rotate( $deg ) scale( $x, $y );
+}
+
+/**
+ * NOTE RN 无法通过 text-overflow 实现省略号，这些代码不能打包到 RN 中
+ */
+ @mixin text-ellipsis() {
+  /*postcss-pxtransform rn eject enable*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  /*postcss-pxtransform rn eject disable*/
+}
+
+/**
+ * NOTE 实现多行文本省略，RN 用 Text 标签的 numberOfLines，H5/小程序用 -webkit-line-clamp
+ */
+@mixin lamp-clamp($line) {
+  /*postcss-pxtransform rn eject enable*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  /* autoprefixer: ignore next */
+  -webkit-box-orient: vertical;
+  /*postcss-pxtransform rn eject disable*/
+}
+
+/* 弹性盒子模型 */
+@mixin flexs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex-wrap {
+  flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+}
+@mixin align-items($a: center) {
+  -webkit-align-items: $a;
+  align-items: $a;
+}
+@mixin justify-content($j: center) {
+  -webkit-justify-content: $j;
+  justify-content: $j;
+}
+@mixin flex($x: 1) {
+  min-width: 0;
+  min-height: 0;
+  -webkit-box-flex: $x;
+  -webkit-flex: $x;
+  flex: $x;
+  -webkit-flex-grow: $x;
+  -ms-flex-positive: $x;
+  flex-grow: $x;
+  -webkit-flex-shrink: $x;
+  -ms-flex-negative: $x;
+  flex-shrink: $x;
+}
+
+/* 动画 */
+@mixin animation( $name, $d: .3s, $fun: ease, $delay: 0s, $count: 1, $mode: both ) {
+  -webkit-animation: $name $d $fun $delay $count;
+  animation: $name $d $fun $delay $count;
+  -webkit-animation-fill-mode: $mode;
+  animation-fill-mode: $mode;
+}
+
+
+/* keyframes */
+@mixin keyframes( $animationName ) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
