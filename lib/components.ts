@@ -1,7 +1,7 @@
 /// <reference path="../node_modules/vite/types/importMeta.d.ts" />
 
 import type { Plugin } from 'vue'
-import TiButton from '../components/TiButton/index.ts'
+// import TiButton from '../components/TiButton/index.ts'
 
 const Components = import.meta.glob('../compontns/**/*.ts')
 
