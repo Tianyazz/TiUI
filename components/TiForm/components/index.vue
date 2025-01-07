@@ -85,8 +85,8 @@ defineExpose({
 <style lang="scss" scoped>
 .form {
   padding: 25rpx 25rpx 5rpx;
-  background: $uni-color-white;
-  border-radius: $uni-border-radius-base;
+  background: var(--ti-color-white);
+  border-radius: var(--ti-radius-md);
   box-shadow: 0 10rpx 20rpx rgba(0, 0, 0, .08);
 }
 </style>

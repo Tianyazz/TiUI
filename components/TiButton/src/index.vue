@@ -18,7 +18,7 @@
   border-radius: 0;
   text-align: center;
   color: var(--ti-color-white);
-  background:var(--ti-color-primary);
+  background: var(--ti-color-primary);
   border: none;
   border-radius: var(--ti-radius-xs);
   @include transition;

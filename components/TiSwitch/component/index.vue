@@ -42,7 +42,7 @@ function toggle() {
 </script>
 
 <style lang="scss" scoped>
-@import '@/static/css/global.scss';
+@import '@/static/global.scss';
 .switch {
   @include flexs;
   @include align-items;
@@ -54,7 +54,7 @@ function toggle() {
     height: 50rpx;
     margin-right: 20rpx;
     border-radius: 25rpx;
-    background: $uni-color-blue;
+    background: var(--ti-color-primary);
     @include transition;
     &::before {
       content: "";
@@ -62,7 +62,7 @@ function toggle() {
       width: 42rpx;
       height: 42rpx;
       @include translate(4rpx, 0);
-      background: $uni-color-white;
+      background: var(--ti-color-white);
       border-radius: 25rpx;
       @include transition(all, .3s, ease-out);
     }
@@ -70,7 +70,7 @@ function toggle() {
   &.active {
     .i {
       box-shadow: 2rpx 4rpx 10rpx 0 rgba(150, 116, 74, .4) inset;
-      background: $uni-color-red;
+      background: var(--ti-color-red);
       &:before {
         @include translate(54rpx, 0);
       }

@@ -131,7 +131,7 @@ onMounted(() => {
       &::before {
         content: "*";
         margin-right: 8rpx;
-        color: $uni-color-red;
+        color: var(--ti-color-red);
       }
     }
   }
@@ -147,7 +147,7 @@ onMounted(() => {
     height: 30rpx;
     font-size: 24rpx;
     line-height: 30rpx;
-    color: $uni-color-error;
+    color: var(--ti-color-error);
     .txt {
       display: none;
     }
